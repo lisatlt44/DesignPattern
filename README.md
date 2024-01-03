@@ -12,31 +12,45 @@ Par exemple, en définissant une interface pour différentes formes géométriqu
 
 ~~~
 // Interface
-public interface Animal {
-  void makeSound();
+interface Shape {
+  double calculateArea();
 }
 
-// Implémentation
-public class Dog implements Animal {
-  public void makeSound() {
-    echo("Woof!");
+// Implémentations
+class Circle implements Shape {
+  private double radius;
+
+  public Circle(double radius) {
+    this.radius = radius;
+  }
+
+  public double calculateArea() {
+    return Math.PI * radius * radius;
   }
 }
 
-public class Cat implements Animal {
-  public void makeSound() {
-    echo("Meow!");
+class Rectangle implements Shape {
+  private double width;
+  private double height;
+
+  public Rectangle(double width, double height) {
+    this.width = width;
+    this.height = height;
+  }
+
+  public double calculateArea() {
+    return width * height;
   }
 }
 
 // Utilisation
 public class Main {
   public static void main(String[] args) {
-    Animal dog = new Dog();
-    Animal cat = new Cat();
+    Shape circle = new Circle(5);
+    Shape rectangle = new Rectangle(4, 6);
 
-    dog.makeSound(); // Output: Woof!
-    cat.makeSound(); // Output: Meow!
+    System.out.println("Aire du cercle : " + circle.calculateArea()); // Output: Aire du cercle
+    System.out.println("Aire du rectangle : " + rectangle.calculateArea()); // Output: Aire du rectangle
   }
 }
 ~~~
