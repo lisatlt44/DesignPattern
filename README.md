@@ -8,7 +8,7 @@
 
 L'un des principaux avantages est la flexibilité et la facilité de modification du code. En programmant vers une interface, on définit un contrat ou un ensemble de méthodes que les classes doivent implémenter, mais on n'est pas lié à une implémentation spécifique. Cela offre une certaine souplesse : si l'implémentation doit être modifiée ou remplacée, cela peut se faire sans affecter les autres parties du code.
 
-Par exemple, en définissant une interface pour différentes formes géométriques, telles que cercle et rectangle, on peut changer ou ajouter de nouvelles formes sans altérer le code existant, ce qui facilite grandement l'évolution du logiciel au fil du temps.
+Par exemple, en définissant une interface pour différentes formes géométriques, telles que cercle et rectangle, on peut changer ou ajouter de nouvelles formes sans altérer le code existant, ce qui facilite grandement l'évolution du logiciel au fil du temps :
 
 ~~~
 // Interface
@@ -57,13 +57,13 @@ public class Main {
 
 Ce code illustre comment une interface commune Shape est utilisée pour calculer l'aire de différentes formes géométriques (Circle et Rectangle). Peu importe la forme spécifique, on utilise la même méthode calculateArea() définie dans l'interface, ce qui rend le code facilement adaptable à de nouvelles formes géométriques sans impacter le reste du programme.
 
-- **Question (`n°2`) : Pourquoi, de manière générale, vaut-il mieux préférer la composition à l’héritage ? Vous pouvez illustrer votre réponse avec un code source minimal et/ou avec un diagramme.**
+- **Question (`n°2`) : Pourquoi, de manière générale, vaut-il mieux préférer la composition à l’héritage ?**
 
-Préférer la composition à l'héritage offre une grande flexibilité. La composition crée une relation "a-un" entre les classes, permettant des ajustements dynamiques des comportements pendant l'exécution du programme. Contrairement à l'héritage, où ces comportements sont définis lors de la compilation. 
+Préférer la composition à l'héritage offre une grande flexibilité. La composition crée une relation "a-un" entre les classes, permettant des ajustements dynamiques des comportements pendant l'**exécution** du programme. Contrairement à l'héritage, où ces comportements sont définis lors de la **compilation**. 
 
-De plus, avec l'héritage, les modifications dans la classe parente peuvent affecter les classes enfants, ce qui est moins probable avec la composition. En héritant, on obtient non seulement l'interface mais aussi son implémentation, ce qui peut exposer des détails internes et briser l'encapsulation.
+De plus, avec l'héritage, les modifications dans la **classe parente** peuvent affecter les **classes enfants**, ce qui est moins probable avec la composition. En héritant, on obtient non seulement l'interface mais aussi son implémentation, ce qui peut exposer des **détails internes** et briser l'**encapsulation**.
 
-Pour illustrer cela, prenons un exemple simple. Imaginons une classe Car qui utilise un objet Engine via l'héritage dans une structure hiérarchique.
+Pour illustrer cela, prenons un exemple simple. Imaginons une classe *Car* qui utilise un objet *Engine* via l'héritage dans une structure hiérarchique :
 
 ~~~
 // Héritage - Relation "est-un"
@@ -76,7 +76,7 @@ class Car extends Engine {
 }
 ~~~
 
-> Dans ce cas, la classe Car hérite non seulement des méthodes de l'Engine, mais aussi de son implémentation, entraînant une forte dépendance et potentiellement une exposition des détails internes.
+> Dans ce cas, la classe *Car* hérite non seulement des méthodes de l'*Engine*, mais aussi de son implémentation, entraînant une forte dépendance et potentiellement une exposition des détails internes.
 
 En revanche, avec la composition :
 
@@ -97,7 +97,12 @@ class Car {
 }
 ~~~
 
-Ici, la classe Car utilise l'Engine via la composition. La Car a une référence vers un objet Engine, utilisant ses fonctionnalités sans exposer les détails internes de l'Engine, préservant ainsi une meilleure encapsulation.
+Ici, la classe *Car* utilise l'*Engine* via la composition. La *Car* a une référence vers un objet *Engine*, utilisant ses fonctionnalités sans exposer les détails internes de l'*Engine*, préservant ainsi une meilleure encapsulation.
 
 - **Question (`n°3`) : En programmation orienté objet, qu’est ce qu’une interface ? Remarque : on ne parle pas ici du construct PHP interface.**
 
+En programmation orientée objet, une interface représente **l'ensemble des signatures de méthode** d'un objet. Elle définit quelles méthodes un objet doit mettre à disposition sans fournir d'implémentation concrète. 
+
+Cela signifie que tout message correspondant à une des signatures définies dans l'interface peut être envoyé à l'objet. L'interface d'un objet est synonyme de **type** de l'objet. 
+
+Dans un **système orienté objet** respectant l'encapsulation, l'interface joue un rôle crucial : les objets ne sont connus que par le biais de leurs interfaces, c'est-à-dire ce qu'ils rendent visible à l'extérieur.
