@@ -41,6 +41,8 @@ public class Main {
 }
 ~~~
 
+Ce code illustre comment une interface commune Shape est utilisée pour calculer l'aire de différentes formes géométriques (Circle et Rectangle). Peu importe la forme spécifique, on utilise la même méthode calculateArea() définie dans l'interface, ce qui rend le code facilement adaptable à de nouvelles formes géométriques sans impacter le reste du programme.
+
 - **Question (`n°2`) : Pourquoi, de manière générale, vaut-il mieux préférer la composition à l’héritage ? Vous pouvez illustrer votre réponse avec un code source minimal et/ou avec un diagramme.**
 
 Préférer la composition à l'héritage offre une grande flexibilité. La composition crée une relation "a-un" entre les classes, permettant des ajustements dynamiques des comportements pendant l'exécution du programme. Contrairement à l'héritage, où ces comportements sont définis lors de la compilation. 
@@ -49,6 +51,7 @@ De plus, avec l'héritage, les modifications dans la classe parente peuvent affe
 
 Pour illustrer cela, prenons un exemple simple. Imaginons une classe Car qui utilise un objet Engine via l'héritage dans une structure hiérarchique.
 
+~~~
 // Héritage - Relation "est-un"
 class Engine {
     // Méthodes de l'Engine
@@ -57,11 +60,13 @@ class Engine {
 class Car extends Engine {
     // Méthodes de la Car
 }
+~~~
 
 > Dans ce cas, la classe Car hérite non seulement des méthodes de l'Engine, mais aussi de son implémentation, entraînant une forte dépendance et potentiellement une exposition des détails internes.
 
 En revanche, avec la composition :
 
+~~~
 // Composition - Relation "a-un"
 class Engine {
     // Méthodes de l'Engine
@@ -76,6 +81,7 @@ class Car {
 
     // Méthodes de la Car utilisant l'Engine via la composition
 }
+~~~
 
 Ici, la classe Car utilise l'Engine via la composition. La Car a une référence vers un objet Engine, utilisant ses fonctionnalités sans exposer les détails internes de l'Engine, préservant ainsi une meilleure encapsulation.
 
