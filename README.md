@@ -198,10 +198,10 @@ php dp-observer-demo.php
 
 > Concrètement, une fois exécuté via la commande ci-dessus, la simulation met en avant le processus d'envoi automatique de notifications aux utilisateurs enregistrés, les tenant informés des changements météorologiques. Voici un peu plus de détails sur les étapes que contient le programme :
 
-- `Initialisation de la station météo` : Lorsque le programme démarre, une station météo virtuelle est créée. Cette station est représentée par une instance de la classe WeatherStation.
+- `Initialisation de la station météo` : Lorsque le programme démarre, une station météo virtuelle est créée. Cette station est représentée par une instance de la classe *WeatherStation*.
 
-- `Enregistrement des utilisateurs` : Deux utilisateurs fictifs, Lisa et Paul, sont créés pour illustrer les observateurs. Ces utilisateurs sont enregistrés en tant qu'observateurs de la station météo via la méthode attach().
+- `Enregistrement des utilisateurs` : Deux utilisateurs fictifs, *Lisa* et *Paul*, sont créés pour illustrer les observateurs. Ces utilisateurs sont enregistrés en tant qu'observateurs de la station météo via la méthode *attach()*.
 
-- `Simulation de changements météorologiques` : La météo est modifiée pour illustrer des conditions différentes. Par exemple, la méthode setWeather() est utilisée pour définir la météo comme "Ensoleillé". Cette action déclenche l'envoi de notifications aux utilisateurs enregistrés via notifyObservers().
+- `Simulation de changements météorologiques` : La météo est modifiée pour illustrer des conditions différentes. Par exemple, la méthode *setWeather()* est utilisée pour définir la météo comme "Ensoleillé". Cette action déclenche l'envoi de notifications aux utilisateurs enregistrés via *notifyObservers()*.
 
-- `Réception des notifications` : Les utilisateurs enregistrés, Lisa et Paul, reçoivent automatiquement des notifications dans le terminal indiquant que la météo a été mise à jour. Ces notifications sont affichées sous la forme de messages tels que "Notification pour Lisa : Météo mise à jour - Ensoleillé".
+- `Réception des notifications` : Les utilisateurs enregistrés, *Lisa* et *Paul*, reçoivent automatiquement des notifications dans le terminal indiquant que la météo a été mise à jour. Ces notifications sont affichées sous la forme de messages tels que *"Notification pour Lisa : Météo mise à jour - Ensoleillé"*.
