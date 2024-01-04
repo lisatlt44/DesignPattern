@@ -59,9 +59,9 @@ Ce code illustre comment une interface commune Shape est utilisée pour calculer
 
 - **Question (`n°2`) : Pourquoi, de manière générale, vaut-il mieux préférer la composition à l’héritage ?**
 
-Préférer la composition à l'héritage offre une grande flexibilité. La composition crée une relation "a-un" entre les classes, permettant des ajustements dynamiques des comportements pendant l'**exécution** du programme. Contrairement à l'héritage, où ces comportements sont définis lors de la **compilation**. 
+Opter pour la composition plutôt que l'héritage apporte une grande souplesse. La composition établit une relation *"a-un"* entre les classes, permettant des ajustements dynamiques des comportements durant **l'exécution** du programme. Contrairement à l'héritage, où ces comportements sont fixés lors de la phase de **compilation**. 
 
-De plus, avec l'héritage, les modifications dans la **classe parente** peuvent affecter les **classes enfants**, ce qui est moins probable avec la composition. En héritant, on obtient non seulement l'interface mais aussi son implémentation, ce qui peut exposer des **détails internes** et briser l'**encapsulation**.
+De plus, les modifications apportées à la **classe parente** dans le cadre de l'héritage peuvent impacter les **classes enfants**, une situation moins probable avec la composition. En héritant, on hérite non seulement de l'interface, mais aussi de son implémentation, risquant d'exposer des **détails internes** et compromettant ainsi **l'encapsulation**.
 
 Pour illustrer cela, prenons un exemple simple. Imaginons une classe *Car* qui utilise un objet *Engine* via l'héritage dans une structure hiérarchique :
 
@@ -101,7 +101,7 @@ Ici, la classe *Car* utilise l'*Engine* via la composition. La *Car* a une réf�
 
 - **Question (`n°3`) : En programmation orienté objet, qu’est ce qu’une interface ? Remarque : on ne parle pas ici du construct PHP interface.**
 
-En programmation orientée objet, une interface représente **l'ensemble des signatures de méthode** d'un objet. Elle définit quelles méthodes un objet doit mettre à disposition sans fournir d'implémentation concrète. 
+En programmation orientée objet, une interface représente **l'ensemble des signatures de méthode d'un objet**. Elle définit quelles méthodes un objet doit mettre à disposition sans fournir d'implémentation concrète. 
 
 Cela signifie que tout message correspondant à une des signatures définies dans l'interface peut être envoyé à l'objet. L'interface d'un objet est synonyme de **type** de l'objet. 
 
