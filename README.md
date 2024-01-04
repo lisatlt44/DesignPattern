@@ -149,9 +149,31 @@ Cette situation suggère l'application du design pattern `Observer`, où les uti
 
 ### Diagramme de classes UML
 
-Voici le **diagramme de classes UML** correspondant à la solution implémentée :
-
 <img src="./diagramme-uml-dp-observer.drawio.svg" width="600px" alt="Diagramme de classes UML du Design Pattern">
+
+Voici les détails de chaque classe : 
+
+- `WeatherStation` :
+  - Attributs : 
+    `observers: array` : Stocke la liste des observateurs enregistrés.
+    `weather: string` : Contient les données météorologiques à partager avec les observateurs.
+  - Méthodes :
+    `setWeather(weather: string)` : Met à jour les données météorologiques.
+    `attach(observer: Observer)` : Ajoute un observateur à la liste.
+    `notifyObservers()` : Notifie tous les observateurs enregistrés avec les mises à jour météorologiques.
+
+- `Observer` :
+  - Méthodes :
+  `update(notification: string)` : Méthode abstraite (dans le concept) pour recevoir la notification concernant les changements météorologiques.
+
+- `User` :
+  - Attributs :
+  `name: string` : Stocke le nom de l'utilisateur.
+  - Méthodes :
+  `__construct(name: string)` : Constructeur pour initialiser un utilisateur avec un nom.
+  `update(notification: string)` : Méthode pour recevoir et gérer les notifications sur les changements météorologiques.
+
+En termes de relations, WeatherStation **dépend** de l'interface *Observer* pour notifier les observateurs sur les changements météorologiques tandis qu'User **implémente** l'interface *Observer* pour recevoir et gérer les notifications de la WeatherStation.
 
 ### Lancer le projet
 
