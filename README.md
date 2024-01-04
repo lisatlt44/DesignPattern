@@ -131,6 +131,18 @@ Imaginons une application de météo qui doit informer les utilisateurs des chan
 
 Le problème principal réside dans le fait que les utilisateurs doivent manuellement rafraîchir l'application pour obtenir les dernières informations météorologiques. Il faut une solution qui permette aux utilisateurs d'être notifiés automatiquement des changements sans avoir à constamment actualiser l'application.
 
-Cette situation suggère l'application du design pattern Observer, où les utilisateurs s'abonnent pour recevoir des notifications lorsque les données météorologiques sont mises à jour. Cela résoudrait le problème en offrant une expérience utilisateur plus réactive et en temps réel.
+Cette situation suggère l'application du design pattern `Observer`, où les utilisateurs s'abonnent pour recevoir des notifications lorsque les données météorologiques sont mises à jour. Cela résoudrait le problème en offrant une expérience utilisateur plus réactive et en temps réel.
 
-## Avantages
+## Avantages et inconvénients
+
+> Avantages
+
+- `Réactivité` : Les utilisateurs recevront instantanément des notifications dès qu'il y aura une mise à jour concernant les changements météorologiques, sans devoir rafraîchir manuellement l'application.
+
+- `Meilleure expérience utilisateur` : Avec les notifications en temps réel, les utilisateurs se sentiront plus engagés et satisfaits, car ils seront informés des changements météorologiques sans effort supplémentaire.
+
+- `Personnalisation` : En fonction de leurs préférences, les utilisateurs pourraient choisir les types de mises à jour météorologiques pour lesquels ils souhaitent recevoir des notifications, offrant ainsi une expérience utilisateur plus flexible.
+
+> Inconvénient
+
+- `Surcharge` : S'il y a trop de notifications envoyées aux utilisateurs ou si elles ne sont pas ciblées avec précision, cela pourrait conduire à une surcharge d'informations et à une diminution de l'utilité des notifications pour les utilisateurs.
