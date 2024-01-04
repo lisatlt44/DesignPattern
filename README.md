@@ -196,7 +196,7 @@ cd nom_du_dépôt
 php dp-observer-demo.php
 ~~~
 
-> Concrètement, une fois exécuté via la commande ci-dessus, la simulation met en avant le processus d'envoi automatique de notifications (affichées dynamiquement dans le terminal) aux utilisateurs enregistrés, les tenant informés des changements météorologiques. Voici un peu plus de détails sur les étapes que contient le programme :
+> Concrètement, une fois exécuté via la commande ci-dessus, la simulation met en avant le processus d'envoi automatique de notifications aux utilisateurs enregistrés, les tenant informés des changements météorologiques. Voici un peu plus de détails sur les étapes que contient le programme :
 
 - `Initialisation de la station météo` : Lorsque le programme démarre, une station météo virtuelle est créée. Cette station est représentée par une instance de la classe WeatherStation.
 
