@@ -7,6 +7,8 @@
     - [Situation initiale](#situation-initiale)
     - [Problème à résoudre](#problème-à-résoudre)
   - [Avantages et inconvénients](#avantages-et-inconvénients)
+  - [Diagramme de classes UML](#diagramme-de-classes-uml)
+  - [Lancer le projet](#lancer-le-projet)
 
 ## Réponses aux questions
 
@@ -115,11 +117,11 @@ Cela signifie que tout message correspondant à une des signatures définies dan
 
 Dans un **système orienté objet** respectant l'encapsulation, l'interface joue un rôle crucial : les objets ne sont connus que par le biais de leurs interfaces, c'est-à-dire ce qu'ils rendent visible à l'extérieur.
 
-## Design Pattern **Observer**
+## Design Pattern *Observer*
 
 ### Contexte
 
-Système de notifications pour une application de météo.
+> Système de notifications pour une application de météo.
 
 #### Situation initiale
 
@@ -144,3 +146,8 @@ Cette situation suggère l'application du design pattern `Observer`, où les uti
 > Inconvénient
 
 - `Surcharge` : S'il y a trop de notifications envoyées aux utilisateurs ou si elles ne sont pas ciblées avec précision, cela pourrait conduire à une surcharge d'informations et à une diminution de l'utilité des notifications pour les utilisateurs.
+
+### Diagramme de classes UML
+
+### Lancer le projet
+
