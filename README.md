@@ -65,7 +65,7 @@ Ce code illustre comment une interface commune Shape est utilisée pour calculer
 
 - **Question (`n°2`) : Pourquoi, de manière générale, vaut-il mieux préférer la composition à l’héritage ?**
 
-Opter pour la composition plutôt que l'héritage apporte une grande souplesse. La composition établit une relation *"a-un"* entre les classes, permettant des ajustements dynamiques des comportements durant **l'exécution** du programme. Contrairement à l'héritage, où ces comportements sont fixés lors de la phase de **compilation**. 
+Il est préférable d'opter pour la composition car elle établit une relation *"a-un"* entre les classes, permettant des ajustements dynamiques des comportements durant **l'exécution** du programme. Contrairement à l'héritage, où ces comportements sont fixés lors de la phase de **compilation**. 
 
 De plus, les modifications apportées à la **classe parente** dans le cadre de l'héritage peuvent impacter les **classes enfants**, une situation moins probable avec la composition. En héritant, on hérite non seulement de l'interface, mais aussi de son implémentation, risquant d'exposer des **détails internes** et compromettant ainsi **l'encapsulation**.
 
@@ -148,6 +148,45 @@ Cette situation suggère l'application du design pattern `Observer`, où les uti
 - `Surcharge` : S'il y a trop de notifications envoyées aux utilisateurs ou si elles ne sont pas ciblées avec précision, cela pourrait conduire à une surcharge d'informations et à une diminution de l'utilité des notifications pour les utilisateurs.
 
 ### Diagramme de classes UML
+
+```plaintext
+-----------------------------------
+|           WeatherStation        |
+-----------------------------------
+| - observers: array               |
+| - weather: string                |
+-----------------------------------
+| + setWeather(weather: string)   |
+| + attach(observer: Observer)    |
+| + notifyObservers()             |
+-----------------------------------
+
+             /\
+             ||
+             ||
+             ||
+             ||
+             ||
+             ||
+             ||
+             ||
+             ||       1     /\
+             ||<----------( ) Observer
+             ||         0..*   \/
+-----------------------------------
+|             Observer            |
+-----------------------------------
+| + update(notification: string) |
+-----------------------------------
+
+-----------------------------------
+|               User              |
+-----------------------------------
+| - name: string                  |
+-----------------------------------
+| + __construct(name: string)     |
+| + update(notification: string)  |
+-----------------------------------
 
 ### Lancer le projet
 
