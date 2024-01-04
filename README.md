@@ -2,11 +2,11 @@
 
 - [Évaluation 1/1 - Design Pattern : veille et présentation d'un design pattern au choix](#évaluation-11---design-pattern--veille-et-présentation-dun-design-pattern-au-choix)
 - [Réponses aux questions](#réponses-aux-questions)
-- [Design Pattern choisi](#design-pattern-choisi)
-- [Contexte](#contexte)
-  - [Situation initiale](#situation-initiale)
-  - [Problème à résoudre](#problème-à-résoudre)
-- [Avantages](#contexte)
+- [Design Pattern Observer](#design-pattern-observer)
+  - [Contexte](#contexte)
+    - [Situation initiale](#situation-initiale)
+    - [Problème à résoudre](#problème-à-résoudre)
+  - [Avantages et inconvénients](#avantages-et-inconvénients)
 
 ## Réponses aux questions
 
@@ -115,25 +115,23 @@ Cela signifie que tout message correspondant à une des signatures définies dan
 
 Dans un **système orienté objet** respectant l'encapsulation, l'interface joue un rôle crucial : les objets ne sont connus que par le biais de leurs interfaces, c'est-à-dire ce qu'ils rendent visible à l'extérieur.
 
-## Design Pattern choisi
+## Design Pattern **Observer**
 
-**Observation** *(Observer)*
-
-## Contexte
+### Contexte
 
 Système de notifications pour une application de météo.
 
-### Situation initiale
+#### Situation initiale
 
 Imaginons une application de météo qui doit informer les utilisateurs des changements climatiques en temps réel. Actuellement, chaque utilisateur doit constamment rafraîchir l'application pour voir les mises à jour météorologiques. Cela crée une expérience utilisateur peu pratique et peu réactive.
 
-### Problème à résoudre
+#### Problème à résoudre
 
 Le problème principal réside dans le fait que les utilisateurs doivent manuellement rafraîchir l'application pour obtenir les dernières informations météorologiques. Il faut une solution qui permette aux utilisateurs d'être notifiés automatiquement des changements sans avoir à constamment actualiser l'application.
 
 Cette situation suggère l'application du design pattern `Observer`, où les utilisateurs s'abonnent pour recevoir des notifications lorsque les données météorologiques sont mises à jour. Cela résoudrait le problème en offrant une expérience utilisateur plus réactive et en temps réel.
 
-## Avantages et inconvénients
+### Avantages et inconvénients
 
 > Avantages
 
