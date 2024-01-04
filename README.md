@@ -2,7 +2,7 @@
 
 - [Évaluation 1/1 - Design Pattern : veille et présentation d'un design pattern au choix](#évaluation-11---design-pattern--veille-et-présentation-dun-design-pattern-au-choix)
 - [Réponses aux questions](#réponses-aux-questions)
-- [Design Pattern Observer](#design-pattern-observer)
+- [Design Pattern : Observer](#design-pattern--observer)
   - [Contexte](#contexte)
     - [Situation initiale](#situation-initiale)
     - [Problème à résoudre](#problème-à-résoudre)
