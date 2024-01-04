@@ -149,7 +149,7 @@ Cette situation suggère l'application du design pattern `Observer`, où les uti
 
 ### Diagramme de classes UML
 
-<img src="./diagramme-uml-dp-observer.drawio.svg" width="600px" alt="Diagramme de classes UML du Design Pattern">
+<img src="./diagramme-uml-dp-observer.drawio.svg" width="500px" alt="Diagramme de classes UML du Design Pattern">
 
 Voici les détails de chaque classe : 
 
