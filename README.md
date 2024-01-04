@@ -137,15 +137,15 @@ Cette situation suggère l'application du design pattern `Observer`, où les uti
 
 > Avantages
 
-- `Réactivité` : Les utilisateurs recevront instantanément des notifications dès qu'il y aura une mise à jour concernant les changements météorologiques, sans devoir rafraîchir manuellement l'application.
+- `Réactivité` : Les utilisateurs recevront instantanément des notifications dès qu'il y aura une mise à jour concernant les changements météorologiques, éliminant ainsi la nécessité de rafraîchir manuellement l'application pour obtenir les dernières informations.
 
-- `Meilleure expérience utilisateur` : Avec les notifications en temps réel, les utilisateurs se sentiront plus engagés et satisfaits, car ils seront informés des changements météorologiques sans effort supplémentaire.
+- `Expérience utilisateur améliorée` : Avec les notifications en temps réel, les utilisateurs se sentiront plus engagés et satisfaits, car ils seront informés des changements météorologiques sans avoir à entreprendre d'actions supplémentaires.
 
-- `Personnalisation` : En fonction de leurs préférences, les utilisateurs pourraient choisir les types de mises à jour météorologiques pour lesquels ils souhaitent recevoir des notifications, offrant ainsi une expérience utilisateur plus flexible.
+- `Personnalisation` : En fonction de leurs préférences, les utilisateurs pourraient choisir les types de mises à jour météorologiques pour lesquels ils souhaitent recevoir des notifications, offrant ainsi une expérience utilisateur plus adaptée à leurs besoins spécifiques.
 
 > Inconvénient
 
-- `Surcharge` : S'il y a trop de notifications envoyées aux utilisateurs ou si elles ne sont pas ciblées avec précision, cela pourrait conduire à une surcharge d'informations et à une diminution de l'utilité des notifications pour les utilisateurs.
+- `Surcharge` : S'il y a trop de notifications envoyées aux utilisateurs ou si elles ne sont pas ciblées avec précision, cela pourrait conduire à une surcharge d'informations, réduisant ainsi l'efficacité et l'utilité des notifications météorologiques.
 
 ### Diagramme de classes UML
 
@@ -153,7 +153,7 @@ Cette situation suggère l'application du design pattern `Observer`, où les uti
 
 Voici les détails de chaque classe : 
 
-> `WeatherStation`
+**WeatherStation**
   - Attributs : 
     - `observers: array` : Stocke la liste des observateurs enregistrés.
     - `weather: string` : Contient les données météorologiques à partager avec les observateurs.
@@ -162,18 +162,34 @@ Voici les détails de chaque classe :
     - `attach(observer: Observer)` : Ajoute un observateur à la liste.
     - `notifyObservers()` : Notifie tous les observateurs enregistrés avec les mises à jour météorologiques.
 
-> `Observer`
+**Observer**
   - Méthodes :
     - `update(notification: string)` : Méthode abstraite (dans le concept) pour recevoir la notification concernant les changements météorologiques.
 
-> `User`
+**User**
   - Attributs :
     - `name: string` : Stocke le nom de l'utilisateur.
   - Méthodes :
     - `__construct(name: string)` : Constructeur pour initialiser un utilisateur avec un nom.
     - `update(notification: string)` : Méthode pour recevoir et gérer les notifications sur les changements météorologiques.
 
-> En termes de relations, WeatherStation **dépend** de l'interface *Observer* pour notifier les observateurs sur les changements météorologiques. Dans un autre temps, User **implémente** l'interface *Observer* pour recevoir et gérer les notifications de la WeatherStation.
+> En termes de relations, WeatherStation **dépend** de l'interface *Observer* pour notifier les observateurs des changements météorologiques et User **implémente** l'interface *Observer* afin de recevoir et gérer les notifications de la WeatherStation.
 
 ### Lancer le projet
 
+Clonage du dépôt
+
+- Pour exécuter ce projet, vous aurez besoin de cloner le dépôt sur votre machine locale, puis de vous placer à la racine du projet :
+
+~~~
+git clone <URL_DU_DÉPÔT>
+cd nom_du_dépôt
+~~~
+
+- Puis, il suffit de tester l'implémentation du design pattern avec la commande suivante :
+
+~~~
+php dp-observer-demo.php
+~~~
+
+> Une fois le projet lancé, l'application simule des mises à jour météorologiques en temps réel. Les utilisateurs enregistrés reçoivent automatiquement des notifications sur ces changements. Ces notifications sont affichées dans le terminal pour montrer comment les utilisateurs sont informés des évolutions météorologiques au fur et à mesure qu'elles se produisent.
