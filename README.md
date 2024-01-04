@@ -155,23 +155,23 @@ Voici les détails de chaque classe :
 
 - `WeatherStation` :
   - Attributs : 
-    `observers: array` : Stocke la liste des observateurs enregistrés.
-    `weather: string` : Contient les données météorologiques à partager avec les observateurs.
+    - `observers: array` : Stocke la liste des observateurs enregistrés.
+    - `weather: string` : Contient les données météorologiques à partager avec les observateurs.
   - Méthodes :
-    `setWeather(weather: string)` : Met à jour les données météorologiques.
-    `attach(observer: Observer)` : Ajoute un observateur à la liste.
-    `notifyObservers()` : Notifie tous les observateurs enregistrés avec les mises à jour météorologiques.
+    - `setWeather(weather: string)` : Met à jour les données météorologiques.
+    - `attach(observer: Observer)` : Ajoute un observateur à la liste.
+    - `notifyObservers()` : Notifie tous les observateurs enregistrés avec les mises à jour météorologiques.
 
 - `Observer` :
   - Méthodes :
-  `update(notification: string)` : Méthode abstraite (dans le concept) pour recevoir la notification concernant les changements météorologiques.
+  - `update(notification: string)` : Méthode abstraite (dans le concept) pour recevoir la notification concernant les changements météorologiques.
 
 - `User` :
   - Attributs :
-  `name: string` : Stocke le nom de l'utilisateur.
+  - `name: string` : Stocke le nom de l'utilisateur.
   - Méthodes :
-  `__construct(name: string)` : Constructeur pour initialiser un utilisateur avec un nom.
-  `update(notification: string)` : Méthode pour recevoir et gérer les notifications sur les changements météorologiques.
+  - `__construct(name: string)` : Constructeur pour initialiser un utilisateur avec un nom.
+  - `update(notification: string)` : Méthode pour recevoir et gérer les notifications sur les changements météorologiques.
 
 En termes de relations, WeatherStation **dépend** de l'interface *Observer* pour notifier les observateurs sur les changements météorologiques tandis qu'User **implémente** l'interface *Observer* pour recevoir et gérer les notifications de la WeatherStation.
 
