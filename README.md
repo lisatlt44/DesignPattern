@@ -11,48 +11,45 @@ L'un des principaux avantages est la flexibilité et la facilité de modificatio
 Par exemple, en définissant une interface pour différentes formes géométriques, telles que cercle et rectangle, on peut changer ou ajouter de nouvelles formes sans altérer le code existant, ce qui facilite grandement l'évolution du logiciel au fil du temps :
 
 ~~~
+# PHP
 // Interface
 interface Shape {
-  double calculateArea();
+    public function calculateArea();
 }
 
 // Implémentations
 class Circle implements Shape {
-  private double radius;
+    private $radius;
 
-  public Circle(double radius) {
-    this.radius = radius;
-  }
+    public function __construct($radius) {
+        $this->radius = $radius;
+    }
 
-  public double calculateArea() {
-    return Math.PI * radius * radius;
-  }
+    public function calculateArea() {
+        return M_PI * $this->radius * $this->radius;
+    }
 }
 
 class Rectangle implements Shape {
-  private double width;
-  private double height;
+    private $width;
+    private $height;
 
-  public Rectangle(double width, double height) {
-    this.width = width;
-    this.height = height;
-  }
+    public function __construct($width, $height) {
+        $this->width = $width;
+        $this->height = $height;
+    }
 
-  public double calculateArea() {
-    return width * height;
-  }
+    public function calculateArea() {
+        return $this->width * $this->height;
+    }
 }
 
 // Utilisation
-public class Main {
-  public static void main(String[] args) {
-    Shape circle = new Circle(5);
-    Shape rectangle = new Rectangle(4, 6);
+$circle = new Circle(5);
+$rectangle = new Rectangle(4, 6);
 
-    System.out.println("Aire du cercle : " + circle.calculateArea()); // Output: Aire du cercle
-    System.out.println("Aire du rectangle : " + rectangle.calculateArea()); // Output: Aire du rectangle
-  }
-}
+echo "Aire du cercle : " . $circle->calculateArea() . "\n"; // Output: Aire du cercle
+echo "Aire du rectangle : " . $rectangle->calculateArea() . "\n"; // Output: Aire du rectangle
 ~~~
 
 Ce code illustre comment une interface commune Shape est utilisée pour calculer l'aire de différentes formes géométriques (Circle et Rectangle). Peu importe la forme spécifique, on utilise la même méthode calculateArea() définie dans l'interface, ce qui rend le code facilement adaptable à de nouvelles formes géométriques sans impacter le reste du programme.
@@ -66,6 +63,7 @@ De plus, les modifications apportées à la **classe parente** dans le cadre de 
 Pour illustrer cela, prenons un exemple simple. Imaginons une classe *Car* qui utilise un objet *Engine* via l'héritage dans une structure hiérarchique :
 
 ~~~
+# PHP
 // Héritage - Relation "est-un"
 class Engine {
     // Méthodes de l'Engine
@@ -81,6 +79,7 @@ class Car extends Engine {
 En revanche, avec la composition :
 
 ~~~
+# PHP
 // Composition - Relation "a-un"
 class Engine {
     // Méthodes de l'Engine
