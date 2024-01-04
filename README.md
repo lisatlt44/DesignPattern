@@ -117,7 +117,7 @@ Cela signifie que tout message correspondant à une des signatures définies dan
 
 Dans un **système orienté objet** respectant l'encapsulation, l'interface joue un rôle crucial : les objets ne sont connus que par le biais de leurs interfaces, c'est-à-dire ce qu'ils rendent visible à l'extérieur.
 
-## Design Pattern *Observer*
+## Design Pattern : *Observer*
 
 ### Contexte
 
@@ -153,7 +153,7 @@ Cette situation suggère l'application du design pattern `Observer`, où les uti
 
 Voici les détails de chaque classe : 
 
-- `WeatherStation` :
+> `WeatherStation`
   - Attributs : 
     - `observers: array` : Stocke la liste des observateurs enregistrés.
     - `weather: string` : Contient les données météorologiques à partager avec les observateurs.
@@ -162,18 +162,18 @@ Voici les détails de chaque classe :
     - `attach(observer: Observer)` : Ajoute un observateur à la liste.
     - `notifyObservers()` : Notifie tous les observateurs enregistrés avec les mises à jour météorologiques.
 
-- `Observer` :
+> `Observer`
   - Méthodes :
     - `update(notification: string)` : Méthode abstraite (dans le concept) pour recevoir la notification concernant les changements météorologiques.
 
-- `User` :
+> `User`
   - Attributs :
     - `name: string` : Stocke le nom de l'utilisateur.
   - Méthodes :
     - `__construct(name: string)` : Constructeur pour initialiser un utilisateur avec un nom.
     - `update(notification: string)` : Méthode pour recevoir et gérer les notifications sur les changements météorologiques.
 
-En termes de relations, WeatherStation **dépend** de l'interface *Observer* pour notifier les observateurs sur les changements météorologiques tandis qu'User **implémente** l'interface *Observer* pour recevoir et gérer les notifications de la WeatherStation.
+> En termes de relations, WeatherStation **dépend** de l'interface *Observer* pour notifier les observateurs sur les changements météorologiques. Dans un autre temps, User **implémente** l'interface *Observer* pour recevoir et gérer les notifications de la WeatherStation.
 
 ### Lancer le projet
 
