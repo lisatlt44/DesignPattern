@@ -6,12 +6,13 @@
 
 - **Question (`n°1`) : Quel(s) avantage(s) procure le fait de programmer vers une interface et non vers une implémentation ?**
 
-L'un des principaux avantages est la flexibilité et la facilité de modification du code. En programmant vers une interface, on définit un contrat ou un ensemble de méthodes que les classes doivent implémenter, mais on n'est pas lié à une implémentation spécifique. Cela offre une certaine souplesse : si l'implémentation doit être modifiée ou remplacée, cela peut se faire sans affecter les autres parties du code.
+L'un des principaux avantages est la flexibilité et la facilité de modification du code. En programmant vers une interface, on définit un contrat ou un ensemble de méthodes que les classes doivent implémenter, mais on n'est pas lié à une implémentation spécifique. Ainsi, si l'implémentation doit être modifiée ou remplacée, cela peut se faire sans affecter les autres parties du code.
 
 Par exemple, en définissant une interface pour différentes formes géométriques, telles que cercle et rectangle, on peut changer ou ajouter de nouvelles formes sans altérer le code existant, ce qui facilite grandement l'évolution du logiciel au fil du temps :
 
 ~~~
 # PHP
+
 // Interface
 interface Shape {
     public function calculateArea();
@@ -64,6 +65,7 @@ Pour illustrer cela, prenons un exemple simple. Imaginons une classe *Car* qui u
 
 ~~~
 # PHP
+
 // Héritage - Relation "est-un"
 class Engine {
     // Méthodes de l'Engine
@@ -80,6 +82,7 @@ En revanche, avec la composition :
 
 ~~~
 # PHP
+
 // Composition - Relation "a-un"
 class Engine {
     // Méthodes de l'Engine
@@ -98,10 +101,14 @@ class Car {
 
 Ici, la classe *Car* utilise l'*Engine* via la composition. La *Car* a une référence vers un objet *Engine*, utilisant ses fonctionnalités sans exposer les détails internes de l'*Engine*, préservant ainsi une meilleure encapsulation.
 
-- **Question (`n°3`) : En programmation orienté objet, qu’est ce qu’une interface ? Remarque : on ne parle pas ici du construct PHP interface.**
+- **Question (`n°3`) : En programmation orienté objet, qu’est ce qu’une interface ?** *Remarque : on ne parle pas ici du construct PHP interface.*
 
 En programmation orientée objet, une interface représente **l'ensemble des signatures de méthode d'un objet**. Elle définit quelles méthodes un objet doit mettre à disposition sans fournir d'implémentation concrète. 
 
 Cela signifie que tout message correspondant à une des signatures définies dans l'interface peut être envoyé à l'objet. L'interface d'un objet est synonyme de **type** de l'objet. 
 
 Dans un **système orienté objet** respectant l'encapsulation, l'interface joue un rôle crucial : les objets ne sont connus que par le biais de leurs interfaces, c'est-à-dire ce qu'ils rendent visible à l'extérieur.
+
+## Design Pattern choisi
+
+## Observation *(Observer)*
