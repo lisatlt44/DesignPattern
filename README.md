@@ -149,44 +149,9 @@ Cette situation suggère l'application du design pattern `Observer`, où les uti
 
 ### Diagramme de classes UML
 
-```plaintext
------------------------------------
-|           WeatherStation        |
------------------------------------
-| - observers: array               |
-| - weather: string                |
------------------------------------
-| + setWeather(weather: string)   |
-| + attach(observer: Observer)    |
-| + notifyObservers()             |
------------------------------------
+Voici le **diagramme de classes UML** correspondant à la solution implémentée :
 
-             /\
-             ||
-             ||
-             ||
-             ||
-             ||
-             ||
-             ||
-             ||
-             ||       1     /\
-             ||<----------( ) Observer
-             ||         0..*   \/
------------------------------------
-|             Observer            |
------------------------------------
-| + update(notification: string) |
------------------------------------
-
------------------------------------
-|               User              |
------------------------------------
-| - name: string                  |
------------------------------------
-| + __construct(name: string)     |
-| + update(notification: string)  |
------------------------------------
+<img src="./diagramme-uml-dp-observer.drawio.svg" width="600px" alt="Diagramme de classes UML du Design Pattern">
 
 ### Lancer le projet
 
