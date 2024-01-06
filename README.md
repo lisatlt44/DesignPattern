@@ -190,6 +190,13 @@ git clone <URL_DU_DÉPÔT>
 cd nom_du_dépôt
 ~~~
 
+> Attention, si vous désirez créer votre propre dépôt à partir des sources, n'oubliez pas de supprimer le dossier `.git` en utilisant les commandes suivantes :
+
+~~~
+rmdir /s .git
+git init
+~~~
+
 - Puis, il suffit de tester l'implémentation du design pattern avec la commande suivante :
 
 ~~~
